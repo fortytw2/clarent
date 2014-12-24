@@ -27,6 +27,6 @@ func Clarent(args []string) error {
 	return nil
 }
 
-func example() {
+func example(c *cli.Context) {
 	fmt.Println("I did things")
 }
