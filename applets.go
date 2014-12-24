@@ -1,11 +1,15 @@
 package main
 
 // Applet imports
-import ()
+import (
+	"github.com/fortytw2/clarent/applets/cat"
+)
 
 // This map contains the mappings from callname
 // to applet function.
-var Applets map[string]Applet = map[string]Applet{}
+var Applets map[string]Applet = map[string]Applet{
+	"cat": cat.Cat,
+}
 
 // Signature of applet functions.
 // call is like os.Argv, and therefore contains the
