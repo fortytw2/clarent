@@ -4,3 +4,4 @@ clarent
 # generated using `find * -type l >> .gitignore`
 # remember to update this upon adding new applets
 ./cat
+./env
