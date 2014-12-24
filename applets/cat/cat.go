@@ -11,7 +11,7 @@ func Cat(args []string) error {
 	app := cli.NewApp()
 	cli.AppHelpTemplate = util.AppletHelpTemplate
 	app.Name = "cat"
-	app.Usage = "concatenates and prints files"
+	app.Usage = "cat [file 1] [file 2] [...]"
 	app.Action = concat
 
 	app.Run(args)
