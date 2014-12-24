@@ -1,4 +1,4 @@
-Clarent [![Build Status](https://magnum.travis-ci.com/fortytw2/clarent.svg?token=z6RRRTsAmDVdjJqpsjYs&branch=master)](https://magnum.travis-ci.com/fortytw2/clarent)
+Clarent [![Build Status](https://travis-ci.org/fortytw2/clarent.svg)](https://travis-ci.org/fortytw2/clarent)
 ============
 Clarent is a complete userland akin to the GNU Coreutils.
 
