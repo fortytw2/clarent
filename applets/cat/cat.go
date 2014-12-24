@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 )
 
-func Cat(args []string) error {
+func Cat(args []string) {
 	app := cli.NewApp()
 	cli.AppHelpTemplate = util.AppletHelpTemplate
 	app.Name = "cat"
@@ -15,8 +15,6 @@ func Cat(args []string) error {
 	app.Action = concat
 
 	app.Run(args)
-
-	return nil
 }
 
 func concat(c *cli.Context) {

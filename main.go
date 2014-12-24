@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"github.com/fortytw2/clarent/util"
 	"os"
 	"path/filepath"
 )
@@ -33,8 +32,6 @@ func main() {
 		}
 	}
 
-	e := applet(args)
-	if e != nil {
-		util.DumpError(e)
-	}
+	// run the applet according to callname
+	applet(args)
 }

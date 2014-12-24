@@ -6,7 +6,7 @@ import (
 	"github.com/fortytw2/clarent/util"
 )
 
-func Clarent(args []string) error {
+func Template(args []string) {
 	app := cli.NewApp()
 	cli.AppHelpTemplate = util.AppletHelpTemplate
 	app.Name = "template"
@@ -24,7 +24,6 @@ func Clarent(args []string) error {
 
 	app.Run(args)
 
-	return nil
 }
 
 func example(c *cli.Context) {

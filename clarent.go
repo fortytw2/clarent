@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 )
 
-func Clarent(args []string) error {
+func Clarent(args []string) {
 	app := cli.NewApp()
 	app.Name = "clarent"
 	app.Usage = "complete userland in a box"
@@ -33,8 +33,6 @@ func Clarent(args []string) error {
 	}
 
 	app.Run(args)
-
-	return nil
 }
 
 func list(c *cli.Context) {
