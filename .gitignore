@@ -5,3 +5,4 @@ clarent
 # remember to update this upon adding new applets
 ./cat
 ./env
+./tty

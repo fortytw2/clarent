@@ -4,6 +4,7 @@ package main
 import (
 	"github.com/fortytw2/clarent/applets/cat"
 	"github.com/fortytw2/clarent/applets/env"
+	"github.com/fortytw2/clarent/applets/tty"
 )
 
 // This map contains the mappings from callname
@@ -11,6 +12,7 @@ import (
 var Applets map[string]Applet = map[string]Applet{
 	"cat": cat.Cat,
 	"env": env.Env,
+	"tty": tty.Tty,
 }
 
 // Signature of applet functions.

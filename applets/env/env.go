@@ -2,10 +2,10 @@ package env
 
 import (
 	"fmt"
-	"os"
-	"strings"
 	"github.com/codegangsta/cli"
 	"github.com/fortytw2/clarent/util"
+	"os"
+	"strings"
 )
 
 func Env(args []string) {
@@ -20,8 +20,7 @@ func Env(args []string) {
 
 func list(c *cli.Context) {
 	for _, e := range os.Environ() {
-        pair := strings.Split(e, "=")
-        fmt.Println(pair[0], ":", pair[1])
-    }
+		pair := strings.Split(e, "=")
+		fmt.Println(pair[0], ":", pair[1])
+	}
 }
-
