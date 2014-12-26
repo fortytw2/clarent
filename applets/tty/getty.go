@@ -8,6 +8,10 @@ import (
 	"os/exec"
 )
 
+// weirdness here - all getty really has to do for us is spawn a process with a
+// certain tty as std{in,out,err} - seems to accomplish as much as mingetty.
+// this is probably because serial consoles aren't a thing anymore.
+// granted, this might be completely the wrong thing to do, but it seems to work
 func Getty(args []string) {
 	app := cli.NewApp()
 	cli.AppHelpTemplate = util.AppletHelpTemplate
@@ -30,7 +34,7 @@ func getty(c *cli.Context) {
 		fmt.Println("unable to obtain tty device, try running as root")
 	}
 
-	// modify our stdin and stdout
+	// swap std{in,out,err}
 	os.Stdout = tty
 	os.Stderr = tty
 	os.Stdin = tty
@@ -38,7 +42,8 @@ func getty(c *cli.Context) {
 	hostname, _ := os.Hostname()
 
 	fmt.Println("Welcome to ", hostname, "running at ", c.Args().Get(0))
-	// exec
+	// run the command on the tty. init is responsible for respawning getty if
+	// it dies, getty doesn't do any respawning
 	cmd := exec.Command(c.Args().Get(1))
 	cmd.Stdin = tty
 	cmd.Stdout = tty

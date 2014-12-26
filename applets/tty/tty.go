@@ -7,6 +7,9 @@ import (
 	"os"
 )
 
+// tty just displays the name of the current tty. the best way to do this on
+// Linux is to open up proc/self/fd/0, which is a symlink to the tty (or pty)
+// that the program is attached to.
 func Tty(args []string) {
 	app := cli.NewApp()
 	cli.AppHelpTemplate = util.AppletHelpTemplate
